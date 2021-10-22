@@ -3,34 +3,44 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Введите число А: ");
-        double a= scan.nextDouble();
-        System.out.print("Введите число B: ");
-        double b= scan.nextDouble();
-        System.out.print("Выберите действие от 1 до 4: ");
-        int c= scan.nextInt();
+        System.out.print("Выберите единицу измерения от 1 до 5: ");
+        int UnitMeas = scan.nextInt();
+        float m;
 
 
-        switch (c){
+        switch (UnitMeas){
             case 1:
-                System.out.print("Сложение: ");
-                System.out.println(a+b);
-                    break;
+                System.out.print("Выбрана единица измерения КИЛОГРАММ, введите значение массы: ");
+                m = scan.nextFloat();
+                System.out.println(m+" килограмм");
+                break;
             case 2:
-                System.out.print("Вычитание: ");
-                System.out.println(a-b);
-                    break;
+                System.out.print("Выбрана единица измерения МИЛЛИГРАММ, введите значение массы: ");
+                m = scan.nextFloat();
+                System.out.print(m/1000000);
+                System.out.println(" килограмм");
+                break;
             case 3:
-                System.out.print("Умножение: ");
-                System.out.println(a*b);
-                    break;
+                System.out.print("Выбрана единица измерения ГРАММ, введите значение массы: ");
+                m = scan.nextFloat();
+                System.out.println(m/1000);
+                System.out.println(" килограмм");
+                break;
             case 4:
-                System.out.print("Деление: ");
-                System.out.println(a/b);
-                    break;
-            default: System.out.println("Ошибка");
+                System.out.print("Выбрана единица измерения ЦЕНТНЕР, введите значение массы: ");
+                m = scan.nextFloat();
+                System.out.println(m*100);
+                System.out.println(" килограмм");
+                break;
+            case 5:
+                System.out.print("Выбрана единица измерения ТОННА, введите значение массы: ");
+                m = scan.nextFloat();
+                System.out.println(m*1000);
+                System.out.println(" килограмм");
+                break;
+            default:
+                System.out.println("Ошибка");
         }
-
 
 
     }
