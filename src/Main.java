@@ -3,15 +3,35 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Катет А: ");
+        System.out.print("Число А: ");
         double a = scan.nextDouble();
-        System.out.print("Катет B: ");
+        System.out.print("Число B: ");
         double b = scan.nextDouble();
+        System.out.print("Число С: ");
+        double c = scan.nextDouble();
 
-        double g = (Math.sqrt(Math.pow(a,2)+Math.pow(b,2)));
-        System.out.println("Гипотенуза: "+g);
-        double P = (a+b+g);
-        System.out.println("Периметр: "+P);
+
+        System.out.print("Min: ");
+        if (a<b && a<c){
+            System.out.println(a);
+        }
+        else if (b<a && b<c){
+            System.out.println(b);
+        }
+        else{
+            System.out.println(c);
+        }
+
+        System.out.print("Max: ");
+        if (a>b && a>c){
+            System.out.println(a);
+        }
+        else if (b>a && b>c){
+            System.out.println(b);
+        }
+        else{
+            System.out.println(c);
+        }
 
 
     }
