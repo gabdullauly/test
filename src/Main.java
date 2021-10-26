@@ -2,19 +2,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scan=new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         System.out.print("Введите число N: ");
         int n = scan.nextInt();
 
-        double sum=0;
+        int k = n/3;
+        k++;
+        System.out.println("Наименьшее число К, при котором 3К>N: "+k);
 
-        for (double i=1; i<=n; i++){
-        sum=sum+1/i;
-            System.out.print(i+" ");
-
-        }
-        System.out.println();
-        System.out.print("Сумма последовательных чисел N-го числа: "+sum);
 
 
 
