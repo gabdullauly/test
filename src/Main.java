@@ -5,21 +5,19 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.print("Введите число N: ");
         int n = scan.nextInt();
-        boolean result = false;
-        double a;
+        int sum = 0;
 
+//        for(int i=1; i<=n; i++){
+//            sum = sum + (2*i-1);
+//        }
+//        System.out.print("Квадрат числа N: "+sum);
 
-
-        //4423
-        while (n>0){
-            a = n%10;   //3, 2
-            n = n/10;   //442, 44
-            if (a==2){
-                result = true;
-                break;
-            }
+        int i=1;
+        while (i<=n){
+            sum = sum + (2*i-1);
+            i++;
         }
-        System.out.println("Содержание цифры 2 в числе N: "+result);
+        System.out.println("Квадрат числа N2: "+sum);
 
 
     }
