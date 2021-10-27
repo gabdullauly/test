@@ -5,44 +5,15 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.print("Введите число N: ");
         int n = scan.nextInt();
-        int a;
-        boolean result = false;
+        double a = 1;
+        double b;
+        double c;
 
-
-        //54312
-        while (n > 0) {               //54312
-            a = n % 10;               //2, 1
-            n = n / 10;               //5431,
-            if (a % 2 != 0) {
-                result = true;      //false
-                break;
-            }
+        for (int i=1; i<=n; i++){
+            b = 0.1*i;
+            c = 1+b;
+            a = a*c;
         }
-        System.out.println(result);
+        System.out.println(a);
     }
 }
-
-
-
-//        Scanner scan = new Scanner(System.in);
-//        System.out.print("введите число N: ");
-//        int n = scan.nextInt();
-//        int a=0;    //счетчик
-//        int sum=0;  //сумма чисел
-//        boolean b = true;
-//
-//
-//        //1234
-//        while (n>0){  //для цикла необходимо обозначить границу что введенное число должно быть больше 0
-//            sum = sum+n%10;   //0+4, 4+3, 7+2, 9+1
-//            n = n/10; //123, 12, 1, 0
-//            a++;1+1+1+1
-//        }
-//        b = (sum%2)==0;
-//        System.out.println("кол-во цифр: "+a);
-//        System.out.println("сумма чисел: "+sum);
-//        System.out.print("четность суммы чисел; "+b);
-
-
-
-
