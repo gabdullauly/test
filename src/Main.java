@@ -3,22 +3,23 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Введите число А: ");
-        int a = scan.nextInt();
-        System.out.print("Введите число B: ");
-        int b = scan.nextInt();
-        System.out.print("Введите число C: ");
-        int c = scan.nextInt();
+        System.out.print("Введите число N: ");
+        int n = scan.nextInt();
+        boolean result = false;
+        double a;
 
-        if ((a > b && a < c) || (a < b && a > c)){
-            System.out.println(a);
+
+
+        //4423
+        while (n>0){
+            a = n%10;   //3, 2
+            n = n/10;   //442, 44
+            if (a==2){
+                result = true;
+                break;
+            }
         }
-        else if ((b > a && b < c) || (b < a && b > c)){
-            System.out.println(b);
-        }
-        else {
-            System.out.println(c);
-        }
+        System.out.println("Содержание цифры 2 в числе N: "+result);
 
 
     }
