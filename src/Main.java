@@ -5,19 +5,14 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.print("Введите число N: ");
         int n = scan.nextInt();
-        int sum = 0;
+        System.out.print("Введите число K: ");
+        int k = scan.nextInt();
+        double sum = 0;
 
-//        for(int i=1; i<=n; i++){
-//            sum = sum + (2*i-1);
-//        }
-//        System.out.print("Квадрат числа N: "+sum);
-
-        int i=1;
-        while (i<=n){
-            sum = sum + (2*i-1);
-            i++;
+        for (int i=1; i<=n; i++){
+            sum = sum +Math.pow(i,k);
         }
-        System.out.println("Квадрат числа N2: "+sum);
+        System.out.println("Сумма: "+sum);
 
 
     }
