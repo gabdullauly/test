@@ -3,17 +3,23 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Введите число N: ");
-        int n = scan.nextInt();
-        double a = 1;
-        double b;
-        double c;
+        System.out.print("Введите число А: ");
+        int a = scan.nextInt();
+        System.out.print("Введите число B: ");
+        int b = scan.nextInt();
+        System.out.print("Введите число C: ");
+        int c = scan.nextInt();
 
-        for (int i=1; i<=n; i++){
-            b = 0.1*i;
-            c = 1+b;
-            a = a*c;
+        if ((a > b && a < c) || (a < b && a > c)){
+            System.out.println(a);
         }
-        System.out.println(a);
+        else if ((b > a && b < c) || (b < a && b > c)){
+            System.out.println(b);
+        }
+        else {
+            System.out.println(c);
+        }
+
+
     }
 }
