@@ -1,40 +1,22 @@
 import java.util.Scanner;
 
+//Дано целое число N (> 0). Найти сумму 1N + 2N-1 + … + N1.
+
 public class Main {
     public static void main(String[] args) {
-//        Scanner scan = new Scanner(System.in);
-//        System.out.print("Число А: ");
-//        int a = scan.nextInt();
-//        System.out.print("Число B: ");
-//        int b = scan.nextInt();
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Число N: ");
+        int n = scan.nextInt();
+        double sum = 0;
+        int k = n;
 
-        int a = 7;
-        int b = 2;
-        //A = 7
-        //B = 2
-        for (int i=a; i>=b; i--){
-            System.out.print(i+" ");
+        //n = 4
+        for (double i=1; i<=n; i++){    //1
+            for (double j=k; j<=k; j++){    //4
+                k--;
+                sum = sum + Math.pow(i,j);
+            }
         }
-        System.out.println();
-        for (int i=a-1; i>=b; i--){
-            System.out.print(i+" ");
-        }
-        System.out.println();
-        for (int i=a-2; i>=b; i--){
-            System.out.print(i+" ");
-        }
-        System.out.println();
-        for (int i=a-3; i>=b; i--){
-            System.out.print(i+" ");
-        }
-        System.out.println();
-        for (int i=a-4; i>=b; i--){
-            System.out.print(i+" ");
-        }
-        System.out.println();
-        for (int i=a-5; i>=b; i--){
-            System.out.print(i+" ");
-        }
-        System.out.println();
+        System.out.println(sum);
     }
 }
