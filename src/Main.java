@@ -2,18 +2,39 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Введите число N: ");
-        int n = scan.nextInt();
-        System.out.print("Введите число K: ");
-        int k = scan.nextInt();
-        double sum = 0;
+//        Scanner scan = new Scanner(System.in);
+//        System.out.print("Число А: ");
+//        int a = scan.nextInt();
+//        System.out.print("Число B: ");
+//        int b = scan.nextInt();
 
-        for (int i=1; i<=n; i++){
-            sum = sum +Math.pow(i,k);
+        int a = 7;
+        int b = 2;
+        //A = 7
+        //B = 2
+        for (int i=a; i>=b; i--){
+            System.out.print(i+" ");
         }
-        System.out.println("Сумма: "+sum);
-
-
+        System.out.println();
+        for (int i=a-1; i>=b; i--){
+            System.out.print(i+" ");
+        }
+        System.out.println();
+        for (int i=a-2; i>=b; i--){
+            System.out.print(i+" ");
+        }
+        System.out.println();
+        for (int i=a-3; i>=b; i--){
+            System.out.print(i+" ");
+        }
+        System.out.println();
+        for (int i=a-4; i>=b; i--){
+            System.out.print(i+" ");
+        }
+        System.out.println();
+        for (int i=a-5; i>=b; i--){
+            System.out.print(i+" ");
+        }
+        System.out.println();
     }
 }
