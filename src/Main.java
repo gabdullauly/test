@@ -5,18 +5,22 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Число N: ");
-        int n = scan.nextInt();
-        double sum = 0;
-        int k = n;
+        System.out.print("Число А: ");
+        int a = scan.nextInt();
+        System.out.print("Число B: ");
+        int b = scan.nextInt();
 
-        //n = 4
-        for (double i=1; i<=n; i++){    //1
-            for (double j=k; j<=k; j++){    //4
-                k--;
-                sum = sum + Math.pow(i,j);
+        //A = 2
+        //B = 5
+        for (int i=a; i<=b; i++){    //2
+            for (int j=a; j<=i; j++){    //4
+                System.out.print(i+" ");
             }
+            System.out.println();
         }
-        System.out.println(sum);
+
+
+
+
     }
 }
