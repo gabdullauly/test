@@ -1,24 +1,42 @@
 import java.util.Scanner;
 
-//Дано целое число N (> 0). Найти сумму 1N + 2N-1 + … + N1.
+//4) Дан массив размера N. Поменять местами его минимальный и максимальный элементы.
 
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Массив N: "); //5
+        System.out.print("Массив N: "); //7
         int n = scan.nextInt();
 
-        int [] meaning = new int[n];
+        int[] mean = new int[n];
         for (int i=0; i<n; i++){
-            meaning[i] = scan.nextInt(); //4 6 8 9 15
+            mean[i] = scan.nextInt();    // 2 45 9 6 12 3 84
         }
 
-        //ср.арифмет
-        double sum = 0;
+        int max = -2147483647;
+        int min = 2147483647;
         for (int i=0; i<n; i++){
-            sum = sum + meaning[i];
+            if (mean[i]>max){
+                max = i;        //находим наибольший элемент и запишем его индекс
+            }
+            if (mean[i]<min){
+                min = i;        //находим наименьший элемент и запишем его индекс
+            }
         }
-        System.out.print("Среднее арифметическое: "+(sum/n));   //ср.ар. должно быть 8,4
+
+//        System.out.println("max: "+mean[max]);
+//        System.out.println("min: "+mean[min]);
+        if(mean[max]!=mean[min]){
+            mean[max] = mean[max] + mean[min];      //84+2
+            mean[min] = mean[max] - mean[min];      //меняем местами то есть 86-2=84 - это mean[min]
+            mean[max] = mean[max] - mean[min];      //86-84=2 - это mean[max]
+        }
+//        System.out.println("max: "+mean[max]);
+//        System.out.println("min: "+mean[min]);
+
+        for (int i=0; i<n; i++){
+            System.out.print(mean[i]+" ");
+        }
 
 
     }
