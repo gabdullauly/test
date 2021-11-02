@@ -5,21 +5,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Число А: ");
-        int a = scan.nextInt();
-        System.out.print("Число B: ");
-        int b = scan.nextInt();
+        System.out.print("Массив N: "); //5
+        int n = scan.nextInt();
 
-        //A = 2
-        //B = 5
-        for (int i=a; i<=b; i++){    //2
-            for (int j=a; j<=i; j++){    //4
-                System.out.print(i+" ");
-            }
-            System.out.println();
+        int [] meaning = new int[n];
+        for (int i=0; i<n; i++){
+            meaning[i] = scan.nextInt(); //4 6 8 9 15
         }
 
-
+        //ср.арифмет
+        double sum = 0;
+        for (int i=0; i<n; i++){
+            sum = sum + meaning[i];
+        }
+        System.out.print("Среднее арифметическое: "+(sum/n));   //ср.ар. должно быть 8,4
 
 
     }
