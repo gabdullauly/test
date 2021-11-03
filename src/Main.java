@@ -1,26 +1,24 @@
 import java.util.Scanner;
 
-//Дано целое число N (> 0). Найти сумму 1N + 2N-1 + … + N1.
+//5) Дан массив размеры N. Найти максимальное число всех элементов массива.
 
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Число А: ");
-        int a = scan.nextInt();
-        System.out.print("Число B: ");
-        int b = scan.nextInt();
+        System.out.print("Массив N: "); //4
+        int n = scan.nextInt();
 
-        //A = 2
-        //B = 5
-        for (int i=a; i<=b; i++){    //2
-            for (int j=a; j<=i; j++){    //4
-                System.out.print(i+" ");
-            }
-            System.out.println();
+        int[] mean = new int[n];
+        for (int i=0; i<n; i++){
+            mean[i] = scan.nextInt();   //15 3 20 44
         }
-
-
-
+        int max = 0;
+        for (int i=0; i<n; i++){
+            if(mean[i]>max){
+                mean[max] = mean[i];
+            }
+        }
+        System.out.print("max: "+mean[max]);
 
     }
 }
