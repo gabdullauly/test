@@ -1,25 +1,42 @@
 import java.util.Scanner;
 
-//6) Дан массив A размера N (N — нечетное число). Вывести его элементы с нечетными номерами в порядке убывания номеров:
-// AN, AN−2, AN−4, ..., A1. Условный оператор не использовать.
+//1) Дан массив A размера N. Найти максимальный элемент из его элементов с нечетными номерами: A1, A3, A5, . . . .
 
 
 public class Main{
     public static void main(String[]args){
         Scanner scan = new Scanner(System.in);
-        System.out.print("Массив А: "); //4
-        int n = scan.nextInt();
+        System.out.print("Введите кол-во попыток для отгадывания рандомного числа: ");  //3
+        int a = scan.nextInt();
 
-        int [] mean = new int[n];
-        for (int i=0; i<n; i++){
-            mean[i] = scan.nextInt();   //2 6 66 77
+        int rand = (int)(Math.random()*30+1);
+
+
+        for (int i=1; i<=a; i++){
+            System.out.print("Введите число от 1 до 30: ");
+            int b = scan.nextInt();
+            if (b==rand){
+                System.out.println("Бинго");
+                return;
+                }
+                else if (b<rand){
+                System.out.println("Подсказка: нужно больше");
+                }
+                else if (b>rand){
+                System.out.println("Подсказка: нужно меньше");
+                }
+                else {
+                System.out.println("Ошибка");
+            }
         }
+        System.out.println(rand);
 
 
-        for(int i=n-1; i>=0; i--){  //4-1=3 - "77", 2-1=1 - "6"
-            System.out.print(mean[i]+" ");  //выводит 77, 6
-            i=i-1;  //3-1=2 - "66" - но сверху еще раз минусует на 1
-        }
+
     }
 }
+
+
+
+
 
