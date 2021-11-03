@@ -1,29 +1,24 @@
 import java.util.Scanner;
 
-//Дан массив A размера N. Вывести вначале его элементы с четными номерами (в порядке возрастания номеров),
-// а затем — элементы с нечетными номерами (также в порядке возрастания номеров): A2, A4, A6, ..., A1, A3, A5, ....
-// Условный оператор не использовать.
+//6) Дан массив A размера N (N — нечетное число). Вывести его элементы с нечетными номерами в порядке убывания номеров:
+// AN, AN−2, AN−4, ..., A1. Условный оператор не использовать.
 
 
 public class Main{
     public static void main(String[]args){
         Scanner scan = new Scanner(System.in);
-        System.out.print("Массив А: "); //5
+        System.out.print("Массив А: "); //4
         int n = scan.nextInt();
 
-        int[] mean = new int[n];
+        int [] mean = new int[n];
         for (int i=0; i<n; i++){
-            mean[i] = scan.nextInt();// 4(0), 15(1), 10(2), 2(3), 22(4)
+            mean[i] = scan.nextInt();   //2 6 66 77
         }
 
-        System.out.print("Элементы четных индексов в порядке возрастания: ");
-        for (int i=0; i<n; i+=2){
-            System.out.print(mean[i]+" ");  //4 10 22
-        }
-        System.out.println();
-        System.out.print("Элементы нечетных индексов в порядке возрастания: ");
-        for (int i=1; i<n; i+=2){
-            System.out.print(mean[i]+" ");  //15 2
+
+        for(int i=n-1; i>=0; i--){  //4-1=3 - "77", 2-1=1 - "6"
+            System.out.print(mean[i]+" ");  //выводит 77, 6
+            i=i-1;  //3-1=2 - "66" - но сверху еще раз минусует на 1
         }
     }
 }
