@@ -1,37 +1,38 @@
 import java.util.Scanner;
 
-//1) Дан массив A размера N. Найти максимальный элемент из его элементов с нечетными номерами: A1, A3, A5, . . . .
+//Дан целочисленный массив A размера N. Переписать в новый цело- численный массив B все четные числа из исходного массива (в том же порядке) и вывести размер полученного массива B и его содержимое.
 
 
 public class Main{
     public static void main(String[]args){
         Scanner scan = new Scanner(System.in);
-        System.out.print("Введите кол-во попыток для отгадывания рандомного числа: ");  //3
-        int a = scan.nextInt();
+        System.out.print("Размер массива А: "); //4
+        int n = scan.nextInt();
 
-        int rand = (int)(Math.random()*30+1);
+        int[] a = new int[n];
+        for (int i=0; i<n; i++) {
+            a[i] = scan.nextInt();   //2 6 8 1
+        }
 
-
-        for (int i=1; i<=a; i++){
-            System.out.print("Введите число от 1 до 30: ");
-            int b = scan.nextInt();
-            if (b==rand){
-                System.out.println("Бинго");
-                return;
-                }
-                else if (b<rand){
-                System.out.println("Подсказка: нужно больше");
-                }
-                else if (b>rand){
-                System.out.println("Подсказка: нужно меньше");
-                }
-                else {
-                System.out.println("Ошибка");
+        int k=0;    //счетчик
+        for (int i=0; i<n; i++){
+            if (a[i]%2==0){
+                k++;
             }
         }
-        System.out.println(rand);
 
+        System.out.print("Четные значения из массива А в массиве В: ");
+        int[] b = new int[k];
+        k=0;    //обратно задаем 0 чтобы был счетчиком
+        for (int i=0; i<n; i++){
+            if (a[i]%2==0){     //проверка на четность
+                b[k]=a[i];      // записывает число в размер к
+                System.out.print(b[k++]+" ");   //выводит последовательность четных чисел в индексе
+            }
 
+        }
+        System.out.println();
+        System.out.print("Размер массива В: "+k);
 
     }
 }
