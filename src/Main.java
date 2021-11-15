@@ -13,7 +13,7 @@ public class Main {
 
         int[] mass1 = new int[n];
         for (int i=0; i<mass1.length; i++){
-            mass1[i] = scan.nextInt();          //21 6561 621 13 7661 564 312
+            mass1[i] = scan.nextInt();          //21 6561 1665 13 7661 564 312
         }
 
         int max = Integer.MIN_VALUE;
