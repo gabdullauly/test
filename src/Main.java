@@ -1,41 +1,34 @@
 import java.util.Scanner;
 
 /*
-1)	Дан массив размера N. Найти два соседних элемента, сумма которых максимальна,
-и вывести эти элементы в порядке возрастания их значений, и вывести сумму значений.
+2)	Дан массив A размера N. Сформировать новый массив B того же размера по следующему правилу:
+элемент BK равен среднему арифметическому элементов массива A с номерами от K до N.
  */
 
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.print("Введите размер массива: ");
-        int n = scan.nextInt();     //7
+        int n = scan.nextInt();         //7
 
-        int[] mass1 = new int[n];
-        for (int i=0; i<mass1.length; i++){
-            mass1[i] = scan.nextInt();          //21 6561 1663 13 7661 564 312
+        int[] mass = new int[n];
+        for (int i = 0; i < mass.length; i++) {
+            mass[i] = scan.nextInt();           //213 62 35 885 66 15 48
         }
 
-        int max = Integer.MIN_VALUE;
-        int ind0 = 0;
-        int ind1 = 0;
-        for (int i=0; i<mass1.length-1; i++){
-            if (mass1[i]+mass1[i+1]>max){
-                    max = mass1[i]+mass1[i+1];
-                    ind0 = mass1[i];
-                    ind1 = mass1[i+1];
+        int ind = mass.length;
+        int k;
+        int[] mass2 = new int[n];
+        for (int i = 0; i < mass.length; i++) {      //i[0]=213, i[1]=62
+            for (int j = i + 1; j < mass.length; j++) {        //j[1]=62, 35, 885, 66, 15, 48
+                k = mass[j];
+                mass[i] = mass[i] + k;        //sum=213+62, sum = 213+62+35, sum= 213+62+35+885, sum=213+62+35+885+66, sum=213+62+35+885+66+15, sum 213+62+35+885+66+15+48=1324
+                k++;
             }
+            mass[i] = mass[i]/ind;
+            mass2[i] = mass[i];
+            ind = ind - 1;
+            System.out.print(mass2[i]+" ");
         }
-
-        int[] mass2 = {ind0, ind1};
-        if (mass2[0]>mass2[1]){
-            System.out.print(mass2[1]+" "+mass2[0]);
-        }
-        else {
-            System.out.print(mass2[0]+" "+mass2[1]);
-        }
-        System.out.println();
-        System.out.print(ind0+ind1);
     }
 }
-
