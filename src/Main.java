@@ -1,34 +1,53 @@
 import java.util.Scanner;
 
 /*
-2)	Дан массив A размера N. Сформировать новый массив B того же размера по следующему правилу:
-элемент BK равен среднему арифметическому элементов массива A с номерами от K до N.
+3) Даны два массива A и B размера 5, элементы которых упорядочены по возрастанию.
+Объединить эти массивы так, чтобы результирующий массив C (размера 10) остался упорядоченным по возрастанию.
+( PS: В конце используете сортировку)
  */
 
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Введите размер массива: ");
-        int n = scan.nextInt();         //7
 
-        int[] mass = new int[n];
-        for (int i = 0; i < mass.length; i++) {
-            mass[i] = scan.nextInt();           //213 62 35 885 66 15 48
+        int[] massA = new int[5];
+        int[] massB = new int[5];
+
+        for (int i=0; i<massA.length; i++){
+            massA[i] = scan.nextInt();          //2 13 6 45 9
+        }
+        for (int i=0; i<massB.length; i++){
+            massB[i] = scan.nextInt();          //25 1 3 12 77
         }
 
-        int ind = mass.length;
-        int k;
-        int[] mass2 = new int[n];
-        for (int i = 0; i < mass.length; i++) {      //i[0]=213, i[1]=62
-            for (int j = i + 1; j < mass.length; j++) {        //j[1]=62, 35, 885, 66, 15, 48
-                k = mass[j];
-                mass[i] = mass[i] + k;        //sum=213+62, sum = 213+62+35, sum= 213+62+35+885, sum=213+62+35+885+66, sum=213+62+35+885+66+15, sum 213+62+35+885+66+15+48=1324
-                k++;
+        int[] massC = new int[10];
+        for (int i=0; i<massC.length-5; i++){
+            massC[i] = massA[i];
+        }
+        int k = 0;
+        for (int i=5; i<massC.length; i++){
+            massC[i] = massB[k];
+            k = k+1;
+        }
+
+        for (int i=0; i<massC.length; i++){
+            System.out.print(massC[i]+" ");
+        }
+
+        System.out.println();
+        for (int i=0; i<massC.length-1; i++){
+            for (int j=0; j< massC.length-i-1; j++){
+                if (massC[j]>massC[j+1]){
+                    int temp = massC[j];
+                    massC[j] = massC[j+1];
+                    massC[j+1] = temp;
+                }
             }
-            mass[i] = mass[i]/ind;
-            mass2[i] = mass[i];
-            ind = ind - 1;
-            System.out.print(mass2[i]+" ");
+        }
+
+        for (int i=0; i<massC.length; i++){
+            System.out.print(massC[i]+" ");
         }
     }
 }
+
