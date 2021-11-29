@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 /*
-<<<<<<< HEAD
 2) Дано натуральное число N. Выведите все его цифры по одной, в обычном порядке, разделяя их пробелами или новыми строками.
 При решении этой задачи нельзя использовать строки, списки, массивы и циклы. Разрешена только рекурсия и целочисленная арифметика.
  */
@@ -34,27 +33,5 @@ public class Main{
         }
         System.out.println(q);
         printNum(n, q);
-=======
-Напишите метод, который принимает в качестве аргумента некоторую строку и возвращает строку без гласных в ней.
- */
-
-public class Main {
-    static String StringWithoutVowels (String a){
-        String s = "";
-        for (int i=0; i<a.length(); i++){
-            if(a.charAt(i)!='a' && a.charAt(i)!='e' && a.charAt(i)!='y' && a.charAt(i)!='u' && a.charAt(i)!='i'
-                    && a.charAt(i)!='o' && a.charAt(i)!='w'){
-                s = s+a.charAt(i);
-            }
-        }
-        return s;
-    }
-    public static void main (String[] args){
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Введите слово: ");        //Samsung*Digital*OnePlus*iPhone
-        String n = scan.next();
->>>>>>> 1674b9eb8cee4e7d63e41faa15822cf2c1be51e4
-
-        System.out.println(StringWithoutVowels(n));
     }
 }
