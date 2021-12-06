@@ -1,25 +1,33 @@
 import java.util.Scanner;
 
-/*
-Напишите метод, который принимает в качестве аргумента некоторую строку и возвращает строку без гласных в ней.
- */
-
-public class Main {
-    static String StringWithoutVowels (String a){
-        String s = "";
-        for (int i=0; i<a.length(); i++){
-            if(a.charAt(i)!='a' && a.charAt(i)!='e' && a.charAt(i)!='y' && a.charAt(i)!='u' && a.charAt(i)!='i'
-                    && a.charAt(i)!='o' && a.charAt(i)!='w'){
-                s = s+a.charAt(i);
-            }
+public class Main{
+    static int getFibonachi (int a){        //5
+        if (a==1){
+            return 0;
         }
-        return s;
+        else if(a==2){
+            return 1;
+        }
+        else {
+            return getFibonachi(a-1)+getFibonachi(a-2);
+        }
     }
+//    static void getSumVoid (int a, int sum){
+//        if (a==1){
+//            System.out.print(1);
+//        }
+//        else {
+//            sum =0;
+//            getSumVoid(a-1, sum+a);
+//        }
+//        System.out.println(sum);
+//    }
     public static void main (String[] args){
         Scanner scan = new Scanner(System.in);
-        System.out.print("Введите слово: ");        //Samsung*Digital*OnePlus*iPhone
-        String n = scan.next();
-
-        System.out.println(StringWithoutVowels(n));
+        System.out.print("Введите число: ");
+        int n = scan.nextInt();     //5
+        System.out.println(getFibonachi(n));
+//        int sum = 0;
+//        getSumVoid(n, sum);
     }
 }
