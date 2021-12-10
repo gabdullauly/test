@@ -1,32 +1,24 @@
+import java.util.Scanner;
 
 /*
-Класс Phone.
-а) Создайте класс Phone, который содержит переменные number, model и weight.
-б) Создайте три экземпляра этого класса.
-в) Выведите на консоль значения их переменных.
-г) Добавить в класс Phone методы: receiveCall, имеет один параметр – имя звонящего. Выводит на консоль сообщение “Звонит {name}”.
+Создать класс Person, который содержит:
+a) поля fullName, age.
+б) методы move() и talk(), в которых просто вывести на консоль сообщение -"Такой-то Person говорит".
+в) Добавьте два конструктора - Person() и Person(fullName, age).
+Создайте два объекта этого класса. Один объект инициализируется конструктором Person(), другой - Person(fullName, age).
+
  */
 
-public class Main {
-    public static void main(String[] args) {
-        Phone phone1 = new Phone("87761135930", "Samsung", 5.6);
-        Phone phone2 = new Phone("87761135920", "iPhone", 4.6);
-        Phone phone3 = new Phone("87714145580", "OnePlus", 6.2);
-
-        System.out.println(phone1.getData());
-        System.out.println(phone2.getData());
-        System.out.println(phone3.getData());
-
-        phone1.receiveCall("Жандос");
-
+public class Main{
+    public static void main (String[] args){
+        Person person1 = new Person("Габдуллаулы Жандос", 31);
+        Person person2 = new Person();
+        person2.fullName = "Габдулла Самал";
+        person2.age = 27;
+        System.out.println(person1.getData());
+        System.out.println(person2.getData());
+        person1.getMove("Габдуллыулы Жандос");
         System.out.println();
-        Phone phone4 = new Phone();
-        phone4.number = "87771115599";
-        phone4.model = "Huawei";
-        phone4.weight = 5.5;
-
-        System.out.println(phone4.getData());
-
-        phone4.receiveCall("Даурбек");
+        person2.getTalk("Габдулла Самал");
     }
 }
