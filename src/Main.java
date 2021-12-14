@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /*
 Создайте класс под названием Student, который имеет параметры и методы:
 int id
@@ -13,14 +11,14 @@ String getData () // Этот метод возвращает все данны�
 Вы должны отсортировать массив в соответствии с их gpa в порядке убывания и распечатать их данные. Используйте пузырьковую сортировку.
  */
 
-public class Main{
-    static void sortByGpa (Student[] student){
-        for (int i=0; i<student.length-1; i++){
-            for (int j=0; j<student.length-i-1; j++){
-                if (student[j].gpa<student[j+1].gpa){
-                    Student temp = student[j];
-                    student[j] = student[j+1];
-                    student[j+1] = temp;
+public class Main {
+    static void getSortByGpa(Student[] mass){
+        for (int i=0; i<mass.length-1; i++){
+            for (int j=0; j< mass.length-i-1; j++){
+                if (mass[j].name.compareTo(mass[j+1].name)>0){
+                    Student temp = mass[j];
+                    mass[j] = mass[j+1];
+                    mass[j+1] = temp;
                 }
             }
         }
@@ -28,34 +26,39 @@ public class Main{
 
     public static void main (String[] args){
         Student student1 = new Student();
-        student1.id = 100;
+        student1.id = 1;
         student1.name = "Alex";
-        student1.surname = "Bolduin";
-        student1.gpa = 3.4;
-
-        Student student2 = new Student(200, "Lionel", "Messi", 4.19);
-        Student student3 = new Student(300, "Cristiano", "Ronaldo", 4.0);
-        Student student4 = new Student(400, "Ronaldinho", "Moreira", 3.8);
-        Student student5 = new Student(500, "David", "Beckham", 3.5);
-
-        Student[] students = {student1, student2, student3, student4, student5};
-
-        for (Student c:students){
+        student1.surname = "Ferguson";
+        student1.gpa = 2.1;
+        
+        Student student2 = new Student(2, "Pep", "Guardoilla", 2.5);
+        Student student3 = new Student(3, "Alessandro", "Poccetino", 2.13);
+        Student student4 = new Student(4, "Frank", "Lampard", 1.8);
+        Student student5 = new Student(5, "Xavi", "Barca", 2.4);
+        
+        Student[] arr = {student1, student2, student3, student4, student5};
+        for (Student c:arr){
             System.out.println(c.getData());
         }
 
-        Student student6 = new Student(600, "Kilian", "Mbappe", 4.1);
-        Student student7 = new Student(700, "Junior", "Neimar", 3.9);
-        Student student8 = new Student(800, "Frank", "Lampard", 3.3);
-        Student student9 = new Student(900, "Didie", "Drogba", 3.6);
-        Student student10 = new Student(1000, "Mo", "Salah", 3.7);
+        System.out.println();
+        System.out.println("------------------------------------");
 
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
-        Student[] studentsAll = {student1, student2, student3, student4, student5, student6, student7, student8, student9, student10};
+        Student student6 = new Student(6, "Kilian", "Mbappe", 4.9);
+        Student student7 = new Student(7, "Petr", "Cech", 3.1);
+        Student student8 = new Student(8, "Yan", "Oblak", 3.3);
+        Student student9 = new Student(9, "Oliver", "Khan", 3.4);
+        Student student10 = new Student(10, "Lionel", "Messi", 4.5);
 
-        sortByGpa(studentsAll);
-        for (Student c:studentsAll){
-            System.out.println(c.getData());
+        Student[] arr2 = {student1, student2, student3, student4, student5, student6, student7, student8, student9, student10};
+        for (Student a:arr2){
+            System.out.println(a.getData());
+        }
+
+        System.out.println("+++++++++++++++++++++++++++++++++++++");
+        getSortByGpa(arr2);
+        for (Student i:arr2){
+            System.out.println(i.getData());
         }
     }
 }
