@@ -52,8 +52,8 @@ public class Main {
         System.out.println("+++++++++++++++++++++++++++++++++");
         getSortByNumber(players);
         for (int i=0; i< players.length; i++){
-            if (i%2==0){
-            System.out.println(players[i].getData()+" "+i);
+            if (players[i].number%2==0){
+                System.out.println(players[i].getData()+" "+i);
             }
         }
     }
