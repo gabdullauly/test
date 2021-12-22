@@ -1,38 +1,35 @@
 /*
-3) Создайте класс Player с параметрами:
-int number;
-String name;
-String surname;
-String position;
-Player ()
-Player (int number, String name, String surname, String position)
-String getData();
-Создать 10 экземпляров, отсортировать по его Number, вывести Игроков с четным индексом в массиве
+Создайте класс Player с параметрами:
+-int number;
+-String name;
+-String surname;
+-String position;
+Getter/setter
++Player ()
++Player (int number, String name, String surname, String position)
+
+Создайте класс Club с параметрами:
+-String name;
+-String country;
+-int ratingPo99ints;
+-Player [] players;
+Getter/setter
++Club ()
++Club (String name, String country, int ratingPoints, Player [] players)
++void printClubData (); // Этот метод отображает информацию о клубе, включая список всех игроков, присутствующих в массиве.
+В основном классе Main создайте 2 массива от разных игроков. (В каждом из них по 5 игроков).
  */
 
-public class Main {
-    static void getSortByNumber (Player[] arr){
-        for (int i=0; i<arr.length-1; i++){
-            for(int j=0; j<arr.length-i-1; j++){
-                if(arr[j].number>arr[j+1].number){
-                    Player temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
-                }
-            }
-        }
-        for(int i=0; i< arr.length; i++){
-            System.out.println(arr[i].getData()+" "+i);
-        }
-        System.out.println();
-    }
 
-    public static void main (String[] args) {
+import java.sql.ClientInfoStatus;
+
+public class Main{
+    public static void main(String[] args) {
         Player player1 = new Player();
-        player1.number = 30;
-        player1.name = "Lionel";
-        player1.surname = "Messi";
-        player1.position = "Right Winger";
+        player1.setNumber(30);
+        player1.setName("Lionel");
+        player1.setSurname("Messi");
+        player1.setPosition("Right Winger");
 
         Player player2 = new Player(11, "Angel", "Di Maria", "Right Winger");
         Player player3 = new Player(7, "Kylian", "Mbappe", "Centre-Forward");
@@ -44,17 +41,30 @@ public class Main {
         Player player9 = new Player(6, "Marco", "Verratti", "Central Midfield");
         Player player10 = new Player(27, "Idrissa", "Gueye", "Defensive Midfield");
 
-        Player[] players = {player1, player2, player3, player4, player5, player6, player7, player8, player9, player10};
-        for (int i=0; i<players.length; i++){
-            System.out.println(players[i].getData()+" "+i);
+        Player[] players = {player1, player2, player3, player4, player5};
+        Player[] players1 = {player6, player7, player8, player9, player10};
+
+        Club club = new Club();
+        club.setName("PSG");
+        club.setCountry("France");
+        club.setRatingPoints(99);
+        club.setPlayers(players);
+
+        Club club1 = new Club("Real Madrid", "Spain", 98, players1);
+        Club club2 = new Club("Chelsea", "England", 89, players);
+        Club club3 = new Club("Juventus", "Italy", 91, players1);
+
+        Club[] clubs = {club, club2, club2, club3};
+
+        for (int i=0; i< clubs.length; i++){
+//            clubs[i].printClubData();
+            System.out.println(clubs[i].toString());
+            System.out.println();
         }
 
-        System.out.println("+++++++++++++++++++++++++++++++++");
-        getSortByNumber(players);
-        for (int i=0; i< players.length; i++){
-            if (players[i].number%2==0){
-                System.out.println(players[i].getData()+" "+i);
-            }
-        }
+
+//        club.printClubData();
+//        System.out.println();
+//        club1.printClubData();
     }
 }
