@@ -17,10 +17,16 @@ Getter/setter
 +Club ()
 +Club (String name, String country, int ratingPoints, Player [] players)
 +void printClubData (); // Этот метод отображает информацию о клубе, включая список всех игроков, присутствующих в массиве.
+<<<<<<< Updated upstream
 В основном классе Main создайте 2 массива от разных игроков. (В каждом из них по 5 игроков).
  */
 
 import com.sun.xml.internal.org.jvnet.mimepull.CleanUpExecutorFactory;
+=======
+В основном классе Main создайте 2 массива из игроков (в каждом из них по 5 игроков) и два клуба из разных клубов.
+ */
+
+>>>>>>> Stashed changes
 
 public class Club {
     private String name;
@@ -28,7 +34,11 @@ public class Club {
     private int ratingPoints;
     private Player[] players;
 
+<<<<<<< Updated upstream
     public Club (){}
+=======
+    public Club(){}
+>>>>>>> Stashed changes
 
     public Club(String name, String country, int ratingPoints, Player[] players){
         this.name = name;
@@ -39,14 +49,29 @@ public class Club {
 
     public String toString(){
         String s = "";
+<<<<<<< Updated upstream
         s = s+name+" "+country+" "+ratingPoints+"\n"; //System.out.println()
 //        System.out.println(name+" "+country+" "+ratingPoints);
         for (int i=0; i<players.length; i++){
+=======
+        s = s+name+" "+country+" "+ratingPoints+":"+"\n";
+        for (int i=0; i< players.length; i++){
+>>>>>>> Stashed changes
             s = s+players[i].toString();
         }
         return s;
     }
 
+<<<<<<< Updated upstream
+=======
+//    public void printClubData(){
+//        System.out.println(name+" "+country+" "+ratingPoints+":");
+//        for (int i=0; i<players.length; i++){
+//            System.out.println(players[i].getNumber()+" "+players[i].getName()+" "+players[i].getSurname()+" "+players[i].getPosition());
+//        }
+//    }
+
+>>>>>>> Stashed changes
     public void setName(String name){
         this.name = name;
     }
@@ -78,4 +103,8 @@ public class Club {
     public Player[] getPlayers(){
         return players;
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
